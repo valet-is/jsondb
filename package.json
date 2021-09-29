@@ -1,5 +1,5 @@
 {
-  "name": "@backdropjs/jsondb",
+  "name": "@valet-is/jsondb",
   "version": "0.0.3",
   "main": "./dist/index.js",
   "scripts": {
@@ -8,11 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/thinkholic/backdrop-js.git",
+    "url": "https://github.com/valet-is/jsondb.git",
     "directory": "packages/node-jsondb"
   },
   "bugs": {
-    "url": "https://github.com/thinkholic/backdrop-js/issues"
+    "url": "https://github.com/valet-is/central/issues"
   },
   "author": "thinkholic",
   "license": "MIT",
