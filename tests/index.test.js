@@ -11,23 +11,19 @@ describe('JsonDB', () => {
   test('initializing', () => {
     expect(typeof db).toBe('function');
 
-    const cursor = db();
-    expect.objectContaining(cursor);
-    expect(typeof cursor.createCollection).toBe('function');
-    expect(typeof cursor.dropCollection).toBe('function');
+    expect.objectContaining(db());
+    expect(typeof db().createCollection).toBe('function');
+    expect(typeof db().dropCollection).toBe('function');
   });
 
   test('creating and dropping a collection', () => {
-    let cursor = db();
-    expect.not.objectContaining(cursor.posts);
+    expect.not.objectContaining(db().posts);
 
-    cursor.createCollection('posts');
-    cursor = db();
-    expect.objectContaining(cursor.posts);
+    db().createCollection('posts');
+    expect.objectContaining(db().posts);
 
-    cursor.dropCollection('posts');
-    cursor = db();
-    expect.not.objectContaining(cursor.posts);
+    db().dropCollection('posts');
+    expect.not.objectContaining(db().posts);
   });
 
   test('insert a new doc', () => {
