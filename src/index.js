@@ -72,6 +72,33 @@ const insert = function (cursor, doc) {
   }
 };
 
+const insertMany = function (cursor, docs = []) {
+  try {
+    this.cursor = cursor;
+
+    const collPath = `${this.root}/${this.cursor}.json`;
+    if (!isFileExists(collPath)) {
+      createCollection.call(this, cursor);
+    }
+
+    this.storage = JSON.parse(
+      fs.readFileSync(collPath, charset)
+    );
+
+    const newDocs = docs.map((doc) => ({
+      ...doc,
+      _id: uniqid(),
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    }))
+    this.storage.push([...newDocs]);
+    this.save();
+    return newDocs;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
 const find = function (cursor, query = null) {
   try {
     this.cursor = cursor;
@@ -206,7 +233,7 @@ function getCollections() {
     // pattern: db.collections.{collName}.*()
     collections[collName] = {};
     collections[collName].insert = insert.bind(this, collName);
-    collections[collName].insertMany = () => { }; // TODO
+    collections[collName].insertMany = () => insertMany.bind(this, collName);
     collections[collName].find = find.bind(this, collName);
     collections[collName].findOne = findOne.bind(this, collName);
     collections[collName].update = () => { }; // TODO
