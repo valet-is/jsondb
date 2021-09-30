@@ -1,6 +1,6 @@
 {
   "name": "@valet-is/jsondb",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "main": "./dist/index.js",
   "scripts": {
     "start:watch": "babel src --watch --out-dir dist",
@@ -14,8 +14,9 @@
     "url": "https://github.com/valet-is/jsondb.git"
   },
   "bugs": {
-    "url": "https://github.com/valet-is/central/issues"
+    "url": "https://github.com/valet-is/jsondb/issues"
   },
+  "homepage": "https://github.com/valet-is/jsondb#readme",
   "author": "thinkholic",
   "license": "MIT",
   "devDependencies": {
