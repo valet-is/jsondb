@@ -10,3 +10,29 @@ npm install
 ```
 
 Run `npm test` to execute test suit.
+
+### Usage
+
+```bash
+npm i @valet-is/jsondb
+```
+
+**App.js**
+
+```js
+import JsonDB from '@valet-is/jsondb';
+
+const db = new JsonDB();
+
+db().createCollection('posts');
+
+db().posts.insert({ title: 'Post Title' });
+db().posts.insertMany([{ title: 'Post Title 1' }, { title: 'Post Title 2' }]);
+
+db().posts.find({});
+db().posts.findOne({ id: 'id' });
+
+db().posts.updateOne({ id: 'id' }, { greet: 'hello world!' });
+
+db().posts.remove({ id });
+```

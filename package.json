@@ -29,6 +29,12 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "jsondb",
+    "json",
+    "db",
+    "database"
+  ],
   "dependencies": {
     "uniqid": "^5.4.0"
   }
