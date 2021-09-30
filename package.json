@@ -4,7 +4,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "start:watch": "babel src --watch --out-dir dist",
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,9 +20,13 @@
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",
-    "babel-plugin-add-module-exports": "^1.0.4"
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "jest": "^27.2.4"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "uniqid": "^5.4.0"
+  }
 }
