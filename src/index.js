@@ -1,3 +1,5 @@
+// @flow
+
 import path from 'path';
 import fs from 'fs';
 import uniqid from 'uniqid';
@@ -14,7 +16,7 @@ const ensureDbSync = function () {
   }
 };
 
-const isFileExists = function (fp) {
+const isFileExists = function (fp: string) {
   try {
     fs.lstatSync(fp);
   } catch (err) {
@@ -23,7 +25,7 @@ const isFileExists = function (fp) {
   return true;
 };
 
-const readDir = function (path) {
+const readDir = function (path: string) {
   try {
     const colls = fs.readdirSync(path);
     return colls.map((c) => c.replace('.json', ''));

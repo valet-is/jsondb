@@ -30,9 +30,11 @@ db().posts.insert({ title: 'Post Title' });
 db().posts.insertMany([{ title: 'Post Title 1' }, { title: 'Post Title 2' }]);
 
 db().posts.find({});
-db().posts.findOne({ id: 'id' });
+db().posts.findOne({ id });
 
-db().posts.updateOne({ id: 'id' }, { greet: 'hello world!' });
+db().posts.updateOne({ id }, { greet: 'hello world!' });
 
 db().posts.remove({ id });
+
+db().dropCollection('posts');
 ```
