@@ -5,7 +5,9 @@
   "scripts": {
     "start:watch": "babel src --watch --out-dir dist",
     "build": "babel src --out-dir dist",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
