@@ -1,3 +1,4 @@
 .DS_Store
+.jsondb
 node_modules
 dist
